@@ -1,0 +1,19 @@
+
+/config/database.yml
+/config/salt.yml
+/config/settings.yml
+
+# Ignore bundler config
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
+
+# Mac finder artifacts
+.DS_Store
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp

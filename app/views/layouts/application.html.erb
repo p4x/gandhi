@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <% if content_for?(:head) %>
+      <%= content_for(:head) %>
+    <% else %>
+      <title><%= GANDHI_SETTINGS['app_name'] %> | Home</title>
+    <% end %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/"><%= GANDHI_SETTINGS['app_name'] %></a>
+          <div class="nav-collapse collapse pull-right">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <%= yield %>
+
+      <footer>
+        <div class="pull-right"><small><i>Be the change. Use Gandhi for good.</i></small></div>
+        <p>This application is powered by <i>Gandhi, the App</i>.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+<script>
+$(document).ready(function() {
+  Gandhi = {};
+  Gandhi.Iterations = <%= GANDHI_SETTINGS['client_iterations'] %>;
+  Gandhi.ClientSalt = '<%= Base64.strict_encode64(SALT) %>'; // Base64 encoded
+  Gandhi.ClientSaltWords = CryptoJS.enc.Base64.parse(Gandhi.ClientSalt);
+  Gandhi.Crypto = new GandhiCrypto();
+  Gandhi.MessageForm = new MessageForm();
+  // Setup the passphrase reveal toggle handler:
+  $('#passphrase').showPassword();
+  // Initialize form handlers:
+  Gandhi.MessageForm.initReadMessageForm();
+  Gandhi.MessageForm.initCreateMessageForm();
+});
+</script>
+
+  </body>
+</html>

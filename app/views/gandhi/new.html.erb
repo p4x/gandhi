@@ -1,0 +1,105 @@
+<% content_for :head do page_title('Create Message'); end %>
+
+<div class="hero-unit">
+  <h2>Create a Message</h2>
+  <div class="create-message-container">
+    <form id="new-message" class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Your Message</label>
+        <div class="controls">
+          <textarea rows="7" name="body" id="message-body" class="span5" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputPassword">Passphrase</label>
+        <div class="controls">
+          <input type="password" id="passphrase" name="passphrase" placeholder="Passphrase" class="span5" data-typetoggle='#toggle-reveal'>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="checkbox">
+            <input type="checkbox" value="" id="toggle-reveal"> <span id="reveal-toggle-note">Show passphrase</span>
+          </label>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Expire Message</label>
+        <div class="controls">
+          <label class="radio">
+            <input type="radio" name="message[expires_at]" value="600" checked>
+            after 10 minutes
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[expires_at]" value="3600">
+            after 1 hour
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[expires_at]" value="21600">
+            after 6 hours
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[expires_at]" value="43200">
+            after 12 hours
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[expires_at]" value="86400">
+            after 24 hours
+          </label>
+          <p><small>(from the time it was created)<br/>Note: if a message is <i>viewed</i>, the self-destruct setting below takes precedence.</small></p>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Self-destruct</label>
+        <div class="controls">
+          <label class="radio">
+            <input type="radio" name="message[destroy_after]" value="0" checked>
+            immediately
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[destroy_after]" value="300">
+            after 5 minutes
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[destroy_after]" value="3600">
+            after 1 hour
+          </label>
+          <label class="radio">
+            <input type="radio" name="message[destroy_after]" value="99999">
+            do not self-destruct (message expires based on settings above)
+          </label>
+          <button type="submit" class="btn btn-large btn-primary create-message-button">Create Message &raquo;</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal -->
+
+<div id="pleaseWaitModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+    <h3 id="myModalLabel">Please wait ...</h3>
+  </div>
+  <div class="modal-body">
+    <div><img src="/img/loading.gif" /> Please wait, your message is being encrypted ...</div>
+  </div>
+  <div class="modal-footer">
+    <!-- <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button> -->
+  </div>
+</div>
+
+<div id="messageCreatedModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Success! Message Created</h3>
+  </div>
+  <div class="modal-body">
+    <div>Your message has been created.</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>

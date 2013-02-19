@@ -1,0 +1,59 @@
+body {
+  padding-top: 60px;
+}
+.navbar-inverse a.brand {
+  margin-top: 10px;
+  color: #f7f7f7;
+  font-size: 1.6em;
+}
+.nav-collapse {
+  margin-top: 10px;
+}
+.navbar-inner {
+  min-height: 60px;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #0066ff;
+  background-image: linear-gradient(to bottom, #0066ff, #005ce6);
+  background-repeat: repeat-x;
+  border-color: #642246;
+}
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover {
+  color: #ffffff;
+  background-color: #005ce6;
+}
+
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus {
+  color: #ffffff;
+  background-color: #005ce6;
+}
+
+div.hero-unit {
+  margin-top: 20px;
+  padding: 40px;
+}
+div.action-box {
+  background-color: #e6e6e6;
+  padding: 20px;
+}
+button.create-message-button {
+  margin-top: 20px;
+}
+
+textarea.error, input.error {
+  border: 3px solid red;
+}
+label.error {
+  padding-top: 4px;
+  color: red;
+}
+
+div.create-message-container {
+  margin-top: 30px;
+}
+form#read-message.form-inline div.input-append label.error {
+  display: block;
+}

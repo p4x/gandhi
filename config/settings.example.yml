@@ -1,0 +1,20 @@
+development:
+  app_name: "Another Gandhi App"
+  iterations: 4096
+  client_iterations: 200
+  remote_host_iterations: 200
+  ban_after_fail_attempts: 10
+
+test:
+  app_name: "Another Gandhi App"
+  iterations: 4096
+  client_iterations: 200
+  remote_host_iterations: 200
+  ban_after_fail_attempts: 10
+
+production:
+  app_name: "Another Gandhi App"
+  iterations: 4096
+  client_iterations: 4096
+  remote_host_iterations: 4096
+  ban_after_fail_attempts: 10

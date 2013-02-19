@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rake casper:prepare RAILS_ENV=test
+rails server -e test -p 31337

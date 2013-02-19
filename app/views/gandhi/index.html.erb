@@ -1,0 +1,83 @@
+<div class="hero-unit">
+  <div class="row">
+    <div class="span5 action-box">
+      <h2>Read a Message</h2>
+      <p><small>To read a message, enter its passphrase below:</small></p>
+      <form id="read-message" class="form-inline">
+        <div class="input-append">
+          <input class="span3 input-medium" id="passphrase" name="passphrase" type="password" placeholder="****************" data-typetoggle='#toggle-reveal'>
+          <button class="btn btn-medium btn-inverse" type="submit">Go &raquo;</button>
+        </div>
+        <label class="checkbox">
+          <input type="checkbox" value="" id="toggle-reveal"> <span id="reveal-toggle-note"><small>Show passphrase</small></span>
+        </label>
+      </form>
+
+    </div>
+    <div class="span5 action-box">
+      <h2>Create a Message</h2>
+      <a href="/gandhi/new" class="btn btn-primary btn-large" style="float: right; margin-top: 12px; margin-left: 10px; margin-bottom: 7px;">Create Message &raquo;</a>
+      <p><small>Create a secure message that can only be read by someone who knows the passphrase. Messages self-destruct shortly after they are read.</small></p>
+    </div>
+  </div>
+ 
+</div>
+
+<div class="row">
+  <div class="span4">
+    <h2>How Gandhi Works</h2>
+    <p>Let's say you want to communicate securely and privately with a friend or trusted partner.</p>
+    <p>First, find a trusted <i>Gandhi</i>-powered website, or alternatively, you could set one up yourself. Next, communicate via a secure channel which <i>Gandhi</i> server you are going to use. Share with your friend (ahead of time) the passphrase that you'd like to use. <small>(You could even tell your friend, "Check the NY Times each day. The passphrase will the be seventh word of the front-page article, the last word of the lead op-ed piece, and the predicted high temperature for Manhattan tomorrow.")</small></p>
+    <p>Next, visit the agreed-upon <i>Gandhi</i> server using any web browser. Enter your message text and passphrase (where you can also specify message expiration and self-destruct settings as well).</p>
+    <p>Anytime before your message is set to expire, your friend would then visit the same <i>Gandhi</i> server, type in the shared passphrase, and read the message.</p>
+ </div>
+  <div class="span4">
+    <h2>About</h2>
+    <p><i>Gandhi, the App</i> is an open source Ruby on Rails application that allows multiple parties (one-to-one or one-to-many) to communicate securely and anonymously (for the most part, when configured as recommended). Of course, you should use your best judgememnt when using a <i>Gandhi</i> web app in the wild. <i>Gandhi, the App</i> is designed with multiple levels of message and passphrase encryption, but this means little if you do not trust the operator of a <i>Gandhi</i> server.</p>
+    <p>Potential uses for <i>Gandhi, the App:</i></p>
+    <ul>
+      <li>For whistleblowers and reporters to communicate securely</li>
+      <li>For organizing a peaceful protest ("Meet at Tahrir square at 2pm")</li>
+      <li>For Chinese dissidents (or dissidents of any stripe) to communicate freely without fear of reprisal</li>
+      <li>For flirting with secret lovers</li>
+      <li>For joking around with friends, without pesky chat log histories</li>
+      <li> ... and sharing ASCII pictures of cats, of course.</li>
+    </ul>
+
+  </div>
+  <div class="span4">
+    <h2>Features</h2>
+    <p><i>Gandhi, the App</i> uses multiple layers of encryption and supports all languages based on UTF-8 (including braille!). More <i>Gandhi</i> features:
+    <ul>
+      <li>Passphrases are hashed using PBKDF2 (4096 default iterations) in the browser and are never sent over the wire as plaintext.</li>
+      <li>Messages are encrypted first in the browser using AES 256-bit encryption, then sent to the server.</li>
+      <li>The encrypted message is encrypted a second time on the server using AES-256.</li>
+      <li>Mitigation of brute-force attacks.</li>
+      <li>It is recommended although not strictly required that <i>Gandhi</i> be configured to use SSL.</li>
+      <li><i>Gandhi</i> ships with a builtin API (so that you can your own mobile client, command-line tool, etc)</li>
+    </ul>
+
+    <p><i>Gandhi, the App</i> is powered by open source:</p>
+    <ul>
+      <li>The app itself is released under the MIT License</li>
+      <li>Built with Ruby on Rails (3.2.x), CryptoJS, OpenSSL, PostgreSQL, jQuery, and Twitter Bootstrap</li>
+      <li>Crypto libraries used: PBKDF2, AES-256</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<div id="showMessageModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">The Message</h3>
+  </div>
+  <div class="modal-body">
+    <div id="show-message-body"></div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
