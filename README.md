@@ -64,7 +64,7 @@ Have you deployed Gandhi in production? Let us know!
 
 You should probably use Gandhi over SSL to prevent a variety of attacks, but for flexibility this is not a strict requirement.
 
-*Installation Steps*
+**How to Install**
 
 Checkout the repository:
 ```bash
@@ -78,14 +78,16 @@ Install gems via Bundler:
 bundle install
 ````
 
-In the root directory of the app, run:
+Run the gandhi rake setup task:
 ```bash
 rake gandhi:setup
 ```
 
 This is simply a rake task that runs two sub-tasks ('rake gandhi:copy_settings' and 'rake gandhi:salt').
 
-You can run these tasks independently as well. Copy the exeample settings file to RAILS_ROOT/config/settings.yml:
+You can run these tasks independently as well (if you'd like).
+
+Copy the exeample settings file to RAILS_ROOT/config/settings.yml by running:
 ```bash
 rake gandhi:copy_settings
 ```
@@ -105,18 +107,18 @@ Start the rails server:
 rails server
 ```
 
-If all went well, your new Gandhi app should now be up and running!
+If all went well, your new Gandhi app should be up and humming like a well-oiled machine!
 
 Builtin API
 -----------
 
-*Gandhi, the App* ships with a builtin API. Roll your own mobile client, or command-line tools!
+*Gandhi, the App* ships with a builtin API, so you can roll your own mobile client, command-line tools, etc.
 
 There are only two API methods: create_message and view_message
 
 See app/controllers/api_controller.rb for more details.
 
-Note: Gandhi will let you submit *un*-encrypted data via the API. This is why data is encrypted a second time on the server, just in case the client is submitting raw, unencrypted message text. (this is unadvisable, but still possible, of course)
+Note: Gandhi will let you submit *un*-encrypted data via the API. This is why data is encrypted a second time on the server, just in case the client is submitting raw, unencrypted message text. (this is unadvisable, yet possible)
 
 License
 -------
@@ -128,13 +130,13 @@ Contributing
 
 See CONTRIBUTING.md for more info.
 
-Fairly usual/straightforward guide to contributing: fork the repo, get the tests passing, add your changes, add tests that pass, push your fork and submit a pull request.
+Fairly usual/straightforward guide to contributing: fork the repo, get the tests passing, add your changes, add passing tests, push your fork and submit a pull request.
 
 
-Standing on the Shoulder of Open Source Giants
+On the Shoulder of Giants
 ----------------------------------------------
 
-We'd like to thank the creators of the following libraries and frameworks. Without their gracious contributions, Gandhi as such would not exist.
+We'd like to thank the creators of the following libraries and frameworks. Without their contributions, *Gandhi* would not be possible.
 
 + Ruby http://www.ruby-lang.org/
 + Ruby on Rails http://rubyonrails.org/
@@ -167,9 +169,9 @@ Run the unit/functional tests:
 rake
 ```
 
-To run the acceptance tests (powered by CasperJS), first start the rails app under the test environemtn.
+To run the acceptance tests (written in CasperJS), first start the rails app under the test environment.
 
-The ./script/serve-casper script sets up the test database and starts the server on the expected port (31337).
+The `./script/serve-casper` script sets up the test database and starts the server on the expected port (31337).
 
 Start the rails app for the test environment:
 ```bash
@@ -180,7 +182,7 @@ Visit `http://localhost:31337/` and ensure that the app is running.
 
 Install node.js if you have not done so already.
 
-Install coffeelint
+Install coffeelint:
 ```bash
 npm install -g coffeelint
 ```
@@ -197,7 +199,7 @@ brew install casperjs
 
 You should now be ready to run the CasperJS tests.
 
-Run the casper tests with:
+Execute the CasperJS tests using the following rake task:
 ```bash
 rake casper
 ```
