@@ -29,7 +29,7 @@
     <p>Let's say you want to communicate securely and privately with a friend or trusted partner.</p>
     <p>First, find a trusted <i>Gandhi</i>-powered website, or alternatively, you could set one up yourself. Next, communicate via a secure channel which <i>Gandhi</i> server you are going to use. Share with your friend (ahead of time) the passphrase that you'd like to use. <small>(You could even tell your friend, "Check the NY Times each day. The passphrase will the be seventh word of the front-page article, the last word of the lead op-ed piece, and the predicted high temperature for Manhattan tomorrow.")</small></p>
     <p>Next, visit the agreed-upon <i>Gandhi</i> server using any web browser. Enter your message text and passphrase (where you can also specify message expiration and self-destruct settings as well).</p>
-    <p>Anytime before your message is set to expire, your friend would then visit the same <i>Gandhi</i> server, type in the shared passphrase, and read the message.</p>
+    <p>Anytime before your message is set to expire, your friend would then visit the same <i>Gandhi</i> server, type in the shared passphrase, and read your message.</p>
  </div>
   <div class="span4">
     <h2>About</h2>
@@ -52,9 +52,7 @@
       <li>Passphrases are hashed using PBKDF2 (4096 default iterations) in the browser and are never sent over the wire as plaintext.</li>
       <li>Messages are encrypted first in the browser using AES 256-bit encryption, then sent to the server.</li>
       <li>The encrypted message is encrypted a second time on the server using AES-256.</li>
-      <li>Mitigation of brute-force attacks.</li>
-      <li>It is recommended although not strictly required that <i>Gandhi</i> be configured to use SSL.</li>
-      <li><i>Gandhi</i> ships with a builtin API (so that you can your own mobile client, command-line tool, etc)</li>
+      <li>Ships with a builtin API (roll your own mobile client, command-line tool, etc)</li>
     </ul>
 
     <p><i>Gandhi, the App</i> is powered by open source:</p>

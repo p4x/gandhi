@@ -1,10 +1,11 @@
 settings_path = Rails.root.join('config', 'settings.yml')
 if !File.exist?(settings_path)
-  puts "Settings file does not exist (RAILS_ROOT/config/settings.yml)"
-  puts "Copy RAILS_ROOT/config/settings.example.yml to RAILS_ROOT/config/settings.yml to get started"
-  raise "Missing RAILS_ROOT/config/settings.yml file"
+  puts "Settings file does not exist: #{settings_path}"
+  puts "Run 'rake gandhi:copy_settings' to copy the example settings file to this path"
+  GANDHI_SETTINGS = {}
+else
+  GANDHI_SETTINGS = YAML.load_file(settings_path)[Rails.env]
 end
-GANDHI_SETTINGS = YAML.load_file(settings_path)[Rails.env]
 salt_path = Rails.root.join('config', 'salt.yml')
 if File.exist?(salt_path)
   salt_yaml = YAML.load_file(salt_path)
