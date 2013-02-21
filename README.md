@@ -3,6 +3,16 @@ Gandhi, the App
 
 *Gandhi, the App* is a Ruby on Rails application that allows parties to communicate privately using a shared passphrase.
 
+Screenshots
+-----------
+
+![Gandhi - Home](https://raw.github.com/p4x/gandhi/master/doc/screenshots/for_github/gandhi_home.png)
+
+![Gandhi - Create Message](https://raw.github.com/p4x/gandhi/master/doc/screenshots/for_github/gandhi_create_message.png)
+
+![Gandhi - Read Message](https://raw.github.com/p4x/gandhi/master/doc/screenshots/for_github/gandhi_read_message.png)
+
+
 How Gandhi Works
 ----------------
 Let's say you want to communicate securely and privately with a friend or trusted partner.
@@ -194,6 +204,6 @@ rake casper
 
 Good luck!
 
-*[ Be the change. Use Gandhi for good. -pax ]*
+*[ Be the change. Use gandhi for good. -pax ]*
 
 
