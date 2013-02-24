@@ -14,5 +14,3 @@ end
 gem 'jquery-rails'
 
 gem 'pbkdf2', '~> 0.1.0'
-
-gem 'thin', :group => :development
