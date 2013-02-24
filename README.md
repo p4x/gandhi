@@ -3,6 +3,14 @@ Gandhi, the App
 
 *Gandhi, the App* is a Ruby on Rails application that allows parties to communicate privately using a shared passphrase.
 
+[Try the Demo App now](http://gandhi-demo.herokuapp.com/ "Gandhi demo app")
+-----------------------------------------------------------------
+
+A demo of *Gandhi, the App* is online at:
+
+[http://gandhi-demo.herokuapp.com/](http://gandhi-demo.herokuapp.com/)
+
+
 Screenshots
 -----------
 
@@ -102,7 +110,12 @@ Next, copy 'config/database.example.yml' to 'config/database.yml' and setup your
 rake db:create
 ```
 
-Start the rails server:
+Run the migrations
+```bash
+rake db:migrate
+```
+
+Start the app:
 ```bash
 rails server
 ```

@@ -47,7 +47,7 @@ MessageForm.prototype = {
     $("#new-message").validate({
 
       submitHandler: function() {
-        $('#pleaseWaitModal').modal();
+        // $('#pleaseWaitModal').modal();
         var expires_at = $('input[name="message[expires_at]"]:checked', '#new-message').val();
         var destroy_after = $('input[name="message[destroy_after]"]:checked', '#new-message').val();
         var passphrase = $('#passphrase').val();
@@ -86,7 +86,7 @@ MessageForm.prototype = {
   },
 
   onCreateSuccess: function onCreateSuccess(data, textStatus, jq_xhr) {
-    $('#pleaseWaitModal').modal('hide');
+    // $('#pleaseWaitModal').modal('hide');
     $('#messageCreatedModal').modal();
     $('#messageCreatedModal').append('<div id="message-created" style="display: none;">true</div>');
     // Reset the form
